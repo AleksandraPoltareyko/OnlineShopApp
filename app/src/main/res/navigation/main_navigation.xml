@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    android:label="@string/fragment_favorites"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.onlineshopapp.presentation.LoginFragment"
+        android:label="Вход"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_catalogFragment"
+            app:destination="@id/catalogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.example.onlineshopapp.presentation.CatalogFragment"
+        android:label="@string/menu_go_to_catalog"
+        tools:layout="@layout/fragment_catalog">
+        <argument
+            android:name="user"
+            app:argType="com.example.onlineshopapp.domain.User" />
+        <action
+            android:id="@+id/action_catalogFragment_to_itemFragment"
+            app:destination="@id/itemFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.onlineshopapp.presentation.MainFragment"
+        android:label="@string/menu_go_to_main"
+        tools:layout="@layout/fragment_main">
+        <argument
+            android:name="user"
+            app:argType="com.example.onlineshopapp.domain.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.example.onlineshopapp.presentation.ItemFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_item">
+        <argument
+            android:name="shopItem"
+            app:argType="com.example.onlineshopapp.domain.Item" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.onlineshopapp.presentation.UserFragment"
+        android:label="@string/fragment_user"
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/action_userFragment_to_favoritesFragment2"
+            app:destination="@id/favoritesFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment2"
+        android:name="com.example.onlineshopapp.presentation.FavoritesFragment"
+        android:label="@string/fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+
+</navigation>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:background="@drawable/for_grid"
+    android:padding="5dp"
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/images_shop_item"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:fitsSystemWindows="true"
+                android:id="@+id/pager_shop_item"
+                android:layout_width="168dp"
+                android:layout_height="144dp"
+                />
+
+            <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/pager_shop_item"
+                android:id="@+id/indicator"
+                app:spi_dotColor="@color/pink"/>
+
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/image_is_not_favorite"
+        android:src="@drawable/is_not_favorite"
+        app:layout_constraintEnd_toEndOf="@id/images_shop_item"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/tv_old_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="old price"
+        style="@style/OldPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/images_shop_item" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_price"
+        android:text="price"
+        style="@style/Title2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_old_price"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:id="@+id/tv_sale"
+        android:text=" sale "
+        style="@style/ElementText.White"
+        app:layout_constraintStart_toEndOf="@id/tv_price"
+        app:layout_constraintTop_toTopOf="@id/tv_price"
+        app:layout_constraintBottom_toBottomOf="@id/tv_price"
+        android:background="@drawable/for_tv_sale"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_title"
+        android:text="title"
+        style="@style/Title3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_price"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_subtitle"
+        android:text="subtitle"
+        style="@style/Caption"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:ignore="TextViewEdits" />
+    <ImageView
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:id="@+id/image_star"
+        android:src="@drawable/star"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_feedback_rating"
+        android:text="rating"
+        style="@style/ElementText.Orange"
+        app:layout_constraintStart_toEndOf="@id/image_star"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_feedback_count"
+        android:text="count"
+        style="@style/ElementText.Grey"
+        app:layout_constraintStart_toEndOf="@id/tv_feedback_rating"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+        />
+    <TextView
+        android:layout_height="32sp"
+        android:layout_width="32sp"
+        android:background="@drawable/for_button_add_to_basket"
+        android:text="+"
+        android:gravity = "center|top"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_star"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

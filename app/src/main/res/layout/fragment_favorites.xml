@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.FavoritesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/for_edit"
+        android:weightSum="100">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:id="@+id/tv_shop_items"
+            android:text="Товары"
+            style="@style/Text1.DarkGrey"
+            android:backgroundTint="@color/white"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            style="@style/Text1"
+            android:id="@+id/tv_brand"
+            android:textColor="@color/grey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/for_edit"
+            android:text="Бренды"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/grid_favoriteList"
+
+        android:numColumns="2"
+        />
+
+</LinearLayout>
